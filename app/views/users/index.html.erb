@@ -1,0 +1,10 @@
+<b>List of users!</b>
+<br>
+<% @users.each do |user| %>
+  <label>Name:</label>
+  <%= user.name %>
+  ||
+  <label>Contact number:</label>
+  <%= user.contact_number %>
+  <br>
+<% end %>
