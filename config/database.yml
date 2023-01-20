@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
+  # pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  # database: db/development.postgresql
+  database: all_in_one_rails_development
+test:
+  <<: *default
+  # database: db/test.sqlipostgresqlte3
+  database: all_in_one_rails_test
+production:
+  <<: *default
+  # database: db/production.sqlipostgresqlte3
+  database: all_in_one_rails_production
